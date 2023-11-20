@@ -252,13 +252,39 @@ button {
 
 .items__grid--item {
     width: 100%;
-    height: fit-content;
+    height: 80px;
     border-radius: 10px;
+    overflow: hidden;
+    background: rgb(0, 104, 56) linear-gradient(13deg, rgba(0, 104, 56, 1) 0%, rgba(0, 147, 69, 1) 20%, rgba(161, 205, 59, 1) 100%);
+    cursor: pointer;
+    color: #fff;
+    padding: 20px;
+    line-height: 1.6;
+    box-shadow: -1px 4px 14px 2px rgba(34, 60, 80, 0.2);
+}
+
+.items__grid--item-click {
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background: rgb(0, 104, 56) linear-gradient(13deg, rgba(0, 104, 56, 1) 0%, rgba(0, 147, 69, 1) 20%, rgba(161, 205, 59, 1) 100%);
     cursor: pointer;
     color: #fff;
     padding: 20px;
     box-shadow: -1px 4px 14px 2px rgba(34, 60, 80, 0.2);
+}
+
+.items__grid--item-click p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text {
+    margin: 0;
 }
 
 .items__grid--item  p{
@@ -290,22 +316,41 @@ button {
 }
 
 .track__section--item p {
-
     font-size: 16px;
 }
 
-.popupFromCards {
+.popupFromCardsPop {
     display: none;
-    font-size: 14px;
 }
 
-.popupFromCards.active {
+.popupFromCardsPop.opened {
     display: block;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    height: fit-content;
+    width: 50%;
+    background: rgb(0, 104, 56) linear-gradient(13deg, rgba(0, 104, 56, 1) 20%, rgba(0, 147, 69, 1) 80%, rgba(161, 205, 59, 1) 100%);
+    z-index: 11;
+    color: #f8f8f8;
+    font-size: 22px;
+    line-height: 1.2;
+    border-radius: 10px;
 }
 
-.wrapper__container--about.click .popupFromCards.active {
-    display: none;
+.popupFromCardsPop.opened>div {
+    padding: 30px;
 }
+
+    /*.popupFromCards.active {*/
+/*    display: block;*/
+/*}*/
+
+/*.wrapper__container--about.click .popupFromCards.active {*/
+/*    display: none;*/
+/*}*/
 
 .instrument__items {
     display: flex;
@@ -388,6 +433,29 @@ button {
     font-weight: bold;
     padding-top: 20px;
     font-size: 24px;
+}
+
+.overlay__modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, 0.8);
+    z-index: 10;
+}
+
+.overlay__modal.opened {
+    display: block;
+}
+
+.page {
+    overflow: auto;
+}
+
+.page.overflowActive {
+    overflow: hidden;
 }
 
 
