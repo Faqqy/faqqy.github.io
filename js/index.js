@@ -1,6 +1,6 @@
 "use strict";
 
-const clickCards = document.querySelector(".items__grid");
+const clickCards = document.querySelectorAll(".items__grid");
 const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("overlay__modal");
 const body = document.getElementById("page");
@@ -18,12 +18,20 @@ function openModal(text) {
     body.classList.add('overflowActive')
 }
 
-clickCards.addEventListener('click', (event) => {
-    if (event.target.classList.contains('text')) {
-        const textElement = event.target.textContent
-        openModal(textElement)
-    }
+clickCards.forEach((items) => {
+    items.addEventListener('click', (event) => {
+        if (event.target.classList.contains('text')) {
+            const textElement = event.target.textContent
+            openModal(textElement)
+        }
+    })
 })
+// clickCards.addEventListener('click', (event) => {
+//     if (event.target.classList.contains('text')) {
+//         const textElement = event.target.textContent
+//         openModal(textElement)
+//     }
+// })
 
 document.addEventListener('click',(event) => {
     const isModalOpened = event.target.classList.contains('opened')
@@ -34,7 +42,6 @@ document.addEventListener('click',(event) => {
         body.classList.remove('overflowActive')
     }
 })
-
 
 
 
