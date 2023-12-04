@@ -68,8 +68,6 @@ button {
     font: inherit;
     color: inherit;
     background-color: transparent;
-    /* отображаем курсор в виде руки при наведении; некоторые
-    считают, что необходимо оставлять стрелочный вид для кнопок */
     cursor: pointer;
 }
 
@@ -204,6 +202,14 @@ button {
 }
 
 .wrapper__container--instruments {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.wrapper__container--recall {
+    height: fit-content;
+    padding-top: 80px;
+    line-height: 1.4;
+    padding-bottom: 80px;
     background: rgba(0, 0, 0, 0.02);
 }
 
@@ -345,14 +351,6 @@ button {
     padding: 30px;
 }
 
-    /*.popupFromCards.active {*/
-/*    display: block;*/
-/*}*/
-
-/*.wrapper__container--about.click .popupFromCards.active {*/
-/*    display: none;*/
-/*}*/
-
 .instrument__items {
     display: flex;
     justify-content: space-between;
@@ -478,5 +476,36 @@ button {
 
 .swiper-button-next::after, .swiper-button-prev::after {
     color: var(--accent-midle-green);
+}
+
+.container__diploma {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 2fr))
+}
+
+.container__diploma--item img {
+    width: 100%;
+    padding: 10px;
+}
+
+.page__footer {
+    background: rgba(0, 0, 0, 0.02);
+    height: 500px;
+}
+
+.wrapper__container--footer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 230px;
+}
+
+.about__footer p {
+    width: 200px;
+    text-align: center;
 }
 
