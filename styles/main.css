@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Rubik-Regular";
-    src: url('./fonts/Rubik/Rubik-Regular.woff') format('woff')
+    src: url('/fonts/Rubik/Rubik-Regular.woff') format('woff')
 }
 
 @font-face {
@@ -20,11 +20,12 @@ html, body {
 
 body {
     overflow: hidden;
-    font-family: "Santello", serif;
+    font-family: "Rubik-Regular", serif;
     line-height: 1;
 }
 
 ol, ul {
+    font-family: "Rubik-Regular", serif;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -48,17 +49,24 @@ a:hover {
     --text_color-end: #222;
 }
 
+h1 {
+    font-family: "Santello", serif;
+}
+
 h2  {
+    font-family: "Santello", serif;
     font-size: 34px;
     color: var(--accent-hight-green);
     margin-bottom: 50px;
 }
 
 h3  {
+    font-family: "Santello", serif;
     font-size: 20px;
 }
 
 p {
+    font-family: "Rubik-Regular", serif;
     font-size: 18px;
 }
 
@@ -141,9 +149,21 @@ button {
 }
 
 .wrapper__container--fullBackground {
-    background: rgba(0, 0, 0, 0.02) url("/images/banner5.png") no-repeat right center;
-    -webkit-background-size: 60%;
-    background-size: 60%;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.imgmaks {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+
+}
+
+.imgmaks img {
+    border-radius: 100%;
+    width: 75%;
+    box-shadow: 4px 4px 81px 40px rgba(48, 122, 99, 0.34);
 }
 
 .block__title {
@@ -307,7 +327,8 @@ button {
 }
 
 .track__section {
-    padding-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 60px;
     margin: 0 auto;
     width: 100%;
     display: grid;
