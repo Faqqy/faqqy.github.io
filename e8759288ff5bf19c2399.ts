@@ -23,6 +23,26 @@ document.addEventListener('mousemove', function (e) {
         style: "\n        --move-x: ".concat((e.clientX - window.innerWidth / 2) * -.005, "deg;\n        --move-y: ").concat((e.clientY - window.innerHeight / 2) * -.01, "deg;\n        ")
     });
 });
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        var lamp = entry.target.querySelector('.idea__block--img');
+        var marquee = entry.target.querySelector('.marquee__block-text');
+        var marquee2 = entry.target.querySelector('.marquee__block-text2');
+        var tablets = entry.target.querySelector('.tablets__square');
+        if (entry.isIntersecting) {
+            lamp.classList.add('lamp-animation');
+            marquee.classList.add('marqueeAnim');
+            marquee2.classList.add('marqueeAnim');
+            tablets.classList.add('tabletsAnim');
+            return;
+        }
+        lamp.classList.remove('lamp-animation');
+        marquee.classList.remove('marqueeAnim');
+        marquee2.classList.remove('marqueeAnim');
+        tablets.classList.remove('tabletsAnim');
+    });
+});
+observer.observe(document.querySelector('.wrapper__container--idea'));
 // const scrollingTextRight = Array.from(document.querySelectorAll('.scrollJsText'));
 // scrollingTextRight.forEach((element: HTMLElement) => {
 //     window.addEventListener('scroll', (e: Event) => {
