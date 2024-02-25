@@ -4,15 +4,17 @@ import "./index.html";
 import "./blog-page.html";
 import './main.css';
 import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 import 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-var swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
+var swiper = new Swiper('.swiper-container', {
+    modules: [Navigation],
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 50,
+    observer: true,
+    observeParents: true,
+    centeredSlides: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
