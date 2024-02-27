@@ -75,3 +75,9 @@ function handleScroll() {
     }
 }
 window.addEventListener('scroll', handleScroll);
+var playButton = document.getElementById('playButton');
+var videoPlayer = document.getElementById('videoPlayer');
+playButton.addEventListener('click', function () {
+    videoPlayer.src += '?autoplay=1';
+    playButton.style.position = 'static';
+});
