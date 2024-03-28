@@ -20,6 +20,19 @@ var swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     }
 });
+var swiper2 = new Swiper('.swiper-container2', {
+    modules: [Navigation],
+    loop: true,
+    observer: true,
+    slidesPerView: 3,
+    spaceBetween: -60,
+    observeParents: true,
+    centeredSlides: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+});
 document.addEventListener('mousemove', function (e) {
     Object.assign(document.documentElement, {
         style: "\n        --move-x: ".concat((e.clientX - window.innerWidth / 2) * -.005, "deg;\n        --move-y: ").concat((e.clientY - window.innerHeight / 2) * -.01, "deg;\n        ")
